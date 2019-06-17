@@ -2,3 +2,4 @@ node_modules
 **/uploads/resized/*
 !/uploads/resized/.gitkeep
 .eslintrc.js
+/package-lock.json
