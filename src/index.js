@@ -1,5 +1,5 @@
-const express = require("express");
-const mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 
@@ -9,12 +9,12 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 mongoose.connect('mongodb+srv://tchelogram:tchelo123@cluster0-wiwwy.mongodb.net/test?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
+  useNewUrlParser: true,
 });
 
 app.use((req, res, next) => {
-   req.io = io;
-   next();
+  req.io = io;
+  next();
 });
 
 app.use(cors());
