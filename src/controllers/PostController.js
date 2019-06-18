@@ -14,13 +14,13 @@ module.exports = {
     console.log(req.body);
     console.log(req.file);
 
-    const { 
-author, place, description, hashtags 
-} = req.body;
+    const {
+      author, place, description, hashtags,
+    } = req.body;
     const { filename: image } = req.file;
 
     const [name] = image.split('.');
-    const fileName = `${name}.jpg`;
+    const fileName = `${name}${new Date().getTimezoneOffset()}${new Date().getMilliseconds()}.jpg`;
 
     await sharp(req.file.path)
       .resize(500)
