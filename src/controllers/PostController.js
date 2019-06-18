@@ -20,7 +20,7 @@ module.exports = {
     const { filename: image } = req.file;
 
     const [name] = image.split('.');
-    const fileName = `${name}${new Date().getTimezoneOffset()}${new Date().getMilliseconds()}.jpg`;
+    const fileName = `${name}${new Date().getTime()}${new Date().getMilliseconds()}.jpg`;
 
     await sharp(req.file.path)
       .resize(500)
